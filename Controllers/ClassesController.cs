@@ -23,7 +23,7 @@ namespace Group_4_DB.Controllers
 
         // GET: api/Classes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Classes>>> GetClasses()
+        public async Task<ActionResult<IEnumerable<Class>>> GetClasses()
         {
           if (_context.Classes == null)
           {
@@ -34,7 +34,7 @@ namespace Group_4_DB.Controllers
 
         // GET: api/Classes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Classes>> GetClasses(string id)
+        public async Task<ActionResult<Class>> GetClasses(string id)
         {
           if (_context.Classes == null)
           {
@@ -53,7 +53,7 @@ namespace Group_4_DB.Controllers
         // PUT: api/Classes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutClasses(string id, Classes classes)
+        public async Task<IActionResult> PutClasses(string id, Class classes)
         {
             if (id != classes.ClassId)
             {
@@ -84,7 +84,7 @@ namespace Group_4_DB.Controllers
         // POST: api/Classes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Classes>> PostClasses(Classes classes)
+        public async Task<ActionResult<Class>> PostClasses(Class classes)
         {
           if (_context.Classes == null)
           {

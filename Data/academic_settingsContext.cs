@@ -19,20 +19,17 @@ namespace Group_4_DB.Data
         {
         }
 
-        public virtual DbSet<Classes> Classes { get; set; }
-        public virtual DbSet<Instructors> Instructors { get; set; }
-        public virtual DbSet<Majors> Majors { get; set; }
-        public virtual DbSet<MajorsClasses> MajorsClasses { get; set; }
-        public virtual DbSet<StudentClasses> StudentClasses { get; set; }
-        public virtual DbSet<Students> Students { get; set; }
+        public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<Instructor> Instructors { get; set; }
+        public virtual DbSet<Major> Majors { get; set; }
+        public virtual DbSet<MajorsClass> MajorsClasses { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<StudentClass> StudentClasses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Classes>(entity =>
+            modelBuilder.Entity<Class>(entity =>
             {
-                entity.HasKey(e => e.ClassId)
-                    .HasName("PK__Classes__CB1927A0ADC943F5");
-
                 entity.Property(e => e.ClassId)
                     .HasMaxLength(20)
                     .IsUnicode(false)
@@ -55,11 +52,8 @@ namespace Group_4_DB.Data
                     .HasColumnName("InstructorID");
             });
 
-            modelBuilder.Entity<Instructors>(entity =>
+            modelBuilder.Entity<Instructor>(entity =>
             {
-                entity.HasKey(e => e.InstructorId)
-                    .HasName("PK__Instruct__9D010B7BA6F5D9BD");
-
                 entity.Property(e => e.InstructorId)
                     .HasMaxLength(20)
                     .IsUnicode(false)
@@ -84,11 +78,8 @@ namespace Group_4_DB.Data
                     .HasColumnName("ILastName");
             });
 
-            modelBuilder.Entity<Majors>(entity =>
+            modelBuilder.Entity<Major>(entity =>
             {
-                entity.HasKey(e => e.MajorId)
-                    .HasName("PK__Majors__D5B8BFB189F65515");
-
                 entity.Property(e => e.MajorId)
                     .HasMaxLength(20)
                     .IsUnicode(false)
@@ -105,7 +96,7 @@ namespace Group_4_DB.Data
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<MajorsClasses>(entity =>
+            modelBuilder.Entity<MajorsClass>(entity =>
             {
                 entity.HasNoKey();
 
@@ -122,28 +113,8 @@ namespace Group_4_DB.Data
                     .HasColumnName("MajorID");
             });
 
-            modelBuilder.Entity<StudentClasses>(entity =>
+            modelBuilder.Entity<Student>(entity =>
             {
-                entity.HasNoKey();
-
-                entity.Property(e => e.ClassId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("ClassID");
-
-                entity.Property(e => e.StudentId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("StudentID");
-            });
-
-            modelBuilder.Entity<Students>(entity =>
-            {
-                entity.HasKey(e => e.StudentId)
-                    .HasName("PK__Students__32C52A79DFFAE2B7");
-
                 entity.Property(e => e.StudentId)
                     .HasMaxLength(20)
                     .IsUnicode(false)
@@ -175,7 +146,24 @@ namespace Group_4_DB.Data
                     .WithMany(p => p.Students)
                     .HasForeignKey(d => d.MajorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Students__MajorI__2A4B4B5E");
+                    .HasConstraintName("FK__Students__MajorI__628FA481");
+            });
+
+            modelBuilder.Entity<StudentClass>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.ClassId)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("ClassID");
+
+                entity.Property(e => e.StudentId)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("StudentID");
             });
 
             OnModelCreatingPartial(modelBuilder);

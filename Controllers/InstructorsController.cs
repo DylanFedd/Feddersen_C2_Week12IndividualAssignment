@@ -23,7 +23,7 @@ namespace Group_4_DB.Controllers
 
         // GET: api/Instructors
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Instructors>>> GetInstructors()
+        public async Task<ActionResult<IEnumerable<Instructor>>> GetInstructors()
         {
           if (_context.Instructors == null)
           {
@@ -34,7 +34,7 @@ namespace Group_4_DB.Controllers
 
         // GET: api/Instructors/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Instructors>> GetInstructors(string id)
+        public async Task<ActionResult<Instructor>> GetInstructors(string id)
         {
           if (_context.Instructors == null)
           {
@@ -53,7 +53,7 @@ namespace Group_4_DB.Controllers
         // PUT: api/Instructors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutInstructors(string id, Instructors instructors)
+        public async Task<IActionResult> PutInstructors(string id, Instructor instructors)
         {
             if (id != instructors.InstructorId)
             {
@@ -84,7 +84,7 @@ namespace Group_4_DB.Controllers
         // POST: api/Instructors
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Instructors>> PostInstructors(Instructors instructors)
+        public async Task<ActionResult<Instructor>> PostInstructors(Instructor instructors)
         {
           if (_context.Instructors == null)
           {

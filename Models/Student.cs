@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Group_4_DB.Models
 {
-    public partial class Students
+    public partial class Student
     {
         public string StudentId { get; set; }
         public string MajorId { get; set; }
@@ -14,6 +14,6 @@ namespace Group_4_DB.Models
         public double Gpa { get; set; }
         public DateTime GradYear { get; set; }
 
-        public virtual Majors Major { get; set; }
+        public virtual Major Major { get; set; }
     }
 }

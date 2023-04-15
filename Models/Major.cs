@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Group_4_DB.Models
 {
-    public partial class Majors
+    public partial class Major
     {
-        public Majors()
+        public Major()
         {
-            Students = new HashSet<Students>();
+            Students = new HashSet<Student>();
         }
 
         public string MajorId { get; set; }
@@ -18,6 +18,6 @@ namespace Group_4_DB.Models
         public string EstimatedCompletion { get; set; }
         public byte LaptopRequired { get; set; }
 
-        public virtual ICollection<Students> Students { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

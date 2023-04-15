@@ -23,7 +23,7 @@ namespace Group_4_DB.Controllers
 
         // GET: api/Students
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Students>>> GetStudents()
+        public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
           if (_context.Students == null)
           {
@@ -34,7 +34,7 @@ namespace Group_4_DB.Controllers
 
         // GET: api/Students/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Students>> GetStudents(string id)
+        public async Task<ActionResult<Student>> GetStudents(string id)
         {
           if (_context.Students == null)
           {
@@ -53,7 +53,7 @@ namespace Group_4_DB.Controllers
         // PUT: api/Students/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudents(string id, Students students)
+        public async Task<IActionResult> PutStudents(string id, Student students)
         {
             if (id != students.StudentId)
             {
@@ -84,7 +84,7 @@ namespace Group_4_DB.Controllers
         // POST: api/Students
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Students>> PostStudents(Students students)
+        public async Task<ActionResult<Student>> PostStudents(Student students)
         {
           if (_context.Students == null)
           {
