@@ -558,3 +558,4 @@ C:\Users\Offbe\OneDrive\Desktop\New folder\C-Group4-main\Group_4_DB\obj\Debug\ne
 C:\Users\Offbe\OneDrive\Desktop\New folder\C-Group4-main\Group_4_DB\obj\Debug\net7.0\Group_4_DB.pdb
 C:\Users\Offbe\OneDrive\Desktop\New folder\C-Group4-main\Group_4_DB\obj\Debug\net7.0\Group_4_DB.genruntimeconfig.cache
 C:\Users\Offbe\OneDrive\Desktop\New folder\C-Group4-main\Group_4_DB\obj\Debug\net7.0\ref\Group_4_DB.dll
+C:\Users\Offbe\OneDrive\Desktop\New folder\C-Group4-main\Group_4_DB\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
